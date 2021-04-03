@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { provideInjectorLocator } from './injector-locator/provide-injector-locator';
 import { INJECTOR_LOCATOR_TOKEN } from './injector-locator/injector-locator.token';
 import { InjectorLocator } from './injector-locator/injector-locator';
+import { SmartishNgRxPipesModule } from './pipes/ngrx-pipes.module';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, SmartishNgRxPipesModule],
   providers: [provideInjectorLocator()],
 })
 export class SmartishNgRxModule {

@@ -1,10 +1,22 @@
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  SmartishNgRxPipesTestingModule,
+  SmartishNgRxTestingModule,
+} from '@briebug/smartish-ngrx';
 import { AppComponent } from './app.component';
+import { QuantityComponent } from './tacos/quantity/quantity.component';
+import { TacosComponent } from './tacos/tacos.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, TacosComponent, QuantityComponent],
+      imports: [
+        SmartishNgRxTestingModule.forRoot({}),
+        SmartishNgRxPipesTestingModule,
+        ReactiveFormsModule,
+      ],
     }).compileComponents();
   });
 
@@ -12,20 +24,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'smartish-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('smartish-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to smartish-app!'
-    );
   });
 });

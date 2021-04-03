@@ -4,7 +4,6 @@ import { provideMockInjectorLocator } from './injector-locator/provide-injector-
 
 @NgModule({
   declarations: [],
-  imports: [],
   providers: [],
 })
 export class SmartishNgRxTestingModule {

@@ -1,0 +1,7 @@
+<strong>ngrxSelect Pipe</strong>
+<pre>
+    {{ selectors.selectTacos | smartSelect | async | json }}
+</pre>
+
+
+<button (click)="store.dispatch(actions.tacoAction())">Taco Button Dispatches via store.dispatch inside template</button>
