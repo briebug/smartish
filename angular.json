@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "smartish-app",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "smartish-app": {
+      "projectType": "application",
+      "root": "apps/smartish-app",
+      "sourceRoot": "apps/smartish-app/src",
+      "prefix": "smartish",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/smartish-app",
+            "index": "apps/smartish-app/src/index.html",
+            "main": "apps/smartish-app/src/main.ts",
+            "polyfills": "apps/smartish-app/src/polyfills.ts",
+            "tsConfig": "apps/smartish-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/smartish-app/src/favicon.ico",
+              "apps/smartish-app/src/assets"
+            ],
+            "styles": ["apps/smartish-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/smartish-app/src/environments/environment.ts",
+                  "with": "apps/smartish-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "smartish-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "smartish-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smartish-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/smartish-app/src/**/*.ts",
+              "apps/smartish-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/smartish-app"],
+          "options": {
+            "jestConfig": "apps/smartish-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "smartish-app-e2e": {
+      "root": "apps/smartish-app-e2e",
+      "sourceRoot": "apps/smartish-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/smartish-app-e2e/cypress.json",
+            "tsConfig": "apps/smartish-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "smartish-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "smartish-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/smartish-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
