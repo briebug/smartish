@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SmartishNgRxPipesTestingModule } from '@briebug/smartish-ngrx';
+import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
 
 import { QuantityComponent } from './quantity.component';
 
@@ -10,7 +10,7 @@ describe('QuantityComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [QuantityComponent],
-      imports: [SmartishNgRxPipesTestingModule],
+      imports: [SmartishNgRxTestingModule.forRoot()],
     }).compileComponents();
   });
 

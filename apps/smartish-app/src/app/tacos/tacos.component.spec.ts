@@ -1,8 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  SmartishNgRxPipesTestingModule,
-  SmartishNgRxTestingModule,
-} from '@briebug/smartish-ngrx';
+import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
 
 import { TacosComponent } from './tacos.component';
 
@@ -13,10 +10,7 @@ describe('TacosComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TacosComponent],
-      imports: [
-        SmartishNgRxTestingModule.forRoot(),
-        SmartishNgRxPipesTestingModule,
-      ],
+      imports: [SmartishNgRxTestingModule.forRoot()],
     }).compileComponents();
   });
 

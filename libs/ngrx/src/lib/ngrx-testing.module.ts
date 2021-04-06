@@ -1,10 +1,10 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { MockStoreConfig, provideMockStore } from '@ngrx/store/testing';
 import { provideMockInjectorLocator } from './injector-locator/provide-injector-locator.mock';
+import { SmartishNgRxPipesTestingModule } from './pipes/ngrx-pipes-testing.module';
 
 @NgModule({
-  declarations: [],
-  providers: [],
+  exports: [SmartishNgRxPipesTestingModule],
 })
 export class SmartishNgRxTestingModule {
   static forRoot<T>(
