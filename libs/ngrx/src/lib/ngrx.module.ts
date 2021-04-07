@@ -8,6 +8,7 @@ import { SmartishNgRxPipesModule } from './pipes/ngrx-pipes.module';
 @NgModule({
   imports: [CommonModule, SmartishNgRxPipesModule],
   providers: [provideInjectorLocator()],
+  exports: [SmartishNgRxPipesModule],
 })
 export class SmartishNgRxModule {
   constructor(

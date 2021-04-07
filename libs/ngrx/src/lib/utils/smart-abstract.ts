@@ -1,6 +1,7 @@
-import { Inject } from '@angular/core';
+import { Directive, Inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 
+@Directive()
 export abstract class SmartAbstract {
-  protected constructor(@Inject(Store) public store: Store) {}
+  constructor(@Inject(Store) public store: Store) {}
 }
