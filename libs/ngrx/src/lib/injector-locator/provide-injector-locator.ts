@@ -1,10 +1,10 @@
 import { Injector } from '@angular/core';
-import { InjectorLocator } from './injector-locator';
 import { injectorLocationFactory } from './injector-locator.factory';
+import { INJECTOR_LOCATOR_TOKEN } from './injector-locator.token';
 
 export function provideInjectorLocator() {
   return {
-    provide: InjectorLocator,
+    provide: INJECTOR_LOCATOR_TOKEN,
     useFactory: injectorLocationFactory,
     deps: [Injector],
   };
