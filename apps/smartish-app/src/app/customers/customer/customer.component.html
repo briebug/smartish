@@ -1,0 +1,24 @@
+<ng-container *ngIf="customer$ | async as customer">
+
+    <h1>
+        {{ customer.firstName }} {{ customer.lastName }}
+    </h1>
+    <!-- <h4>Category / <strong>{{ product.category.name }}</strong></h4> -->
+    
+    <mat-card>
+        <mat-card-content>
+            <mat-icon>more_vert</mat-icon>
+            <h3>Phone: {{ customer.phone }}</h3>
+            <h3>Email: {{ customer.email }}</h3>
+            <h3>Address:<br />
+                {{ customer.address.addressLine1 }}<br />
+                {{ customer.address.city }}, {{ customer.address.state }} {{ customer.address.zip }}
+            </h3>
+            <h3>Total Orders: {{ customer.totalOrders }}</h3>
+            <h3>Total Spent: {{ customer.totalSpent }}</h3>
+
+            <button mat-raised-button color="primary" (click)="save(customer)">Save</button>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>
