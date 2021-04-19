@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "smartish-app",
   "schematics": {
@@ -51,7 +52,9 @@
               "apps/smartish-app/src/favicon.ico",
               "apps/smartish-app/src/assets"
             ],
-            "styles": ["apps/smartish-app/src/styles.scss"],
+            "styles": [
+              "apps/smartish-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -112,7 +115,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/smartish-app"],
+          "outputs": [
+            "coverage/apps/smartish-app"
+          ],
           "options": {
             "jestConfig": "apps/smartish-app/jest.config.js",
             "passWithNoTests": true
@@ -141,7 +146,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/smartish-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/smartish-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -175,7 +182,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ngrx"],
+          "outputs": [
+            "coverage/libs/ngrx"
+          ],
           "options": {
             "jestConfig": "libs/ngrx/jest.config.js",
             "passWithNoTests": true

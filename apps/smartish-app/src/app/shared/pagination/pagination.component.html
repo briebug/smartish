@@ -1,0 +1,6 @@
+<mat-paginator *ngIf="paginator"
+    [length]="paginator.length"
+    [pageSize]="paginator.pageSize"
+    [pageSizeOptions]="paginator.pageSizeOptions"
+    (page)="page.emit($event)">
+</mat-paginator>

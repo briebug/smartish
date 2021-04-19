@@ -8,7 +8,7 @@ import {
 import { Store, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
-import { TacosModule } from './tacos/tacos.module';
+import { BillingModule } from './billing';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,7 @@ import { TacosModule } from './tacos/tacos.module';
     SmartishNgRxModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
-    TacosModule,
+    BillingModule,
   ],
   providers: [{ provide: SMARTISH_STORE_TOKEN, useClass: Store }],
   bootstrap: [AppComponent],

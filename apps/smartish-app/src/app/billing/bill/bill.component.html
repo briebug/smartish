@@ -1,0 +1,17 @@
+<ng-container *ngIf="bill$ | async as bill">
+    <h1>
+       Invoice #: {{ bill.id }}
+    </h1>
+    
+    <mat-card>
+        <mat-card-content>
+            <mat-icon>more_vert</mat-icon>
+            <h3>Recipient: {{ bill.to.firstName }} {{ bill.to.lastName }}</h3>
+            <h3>Date: {{ bill.date | date }}</h3>
+            <h3>Amount: {{ bill.amount | currency }}</h3>
+
+            <button mat-raised-button color="primary" (click)="save(bill)">Save</button>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>
