@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { BillingModule } from './billing';
 import { CatalogModule } from './catalog';
+import { OrdersModule } from './orders/';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { CatalogModule } from './catalog';
     EffectsModule.forRoot([]),
     BillingModule,
     CatalogModule,
+    OrdersModule,
   ],
   providers: [{ provide: SMARTISH_STORE_TOKEN, useClass: Store }],
   bootstrap: [AppComponent],
