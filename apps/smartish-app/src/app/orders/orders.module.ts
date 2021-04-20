@@ -13,12 +13,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { OrdersStoreModule } from './+state/order-state.module';
 
 @NgModule({
   declarations: [OrdersComponent, AddOrderComponent, OrderComponent],
   imports: [
     CommonModule,
     OrdersRoutingModule,
+    OrdersStoreModule,
     MatCardModule,
     MatTableModule,
     MatChipsModule,

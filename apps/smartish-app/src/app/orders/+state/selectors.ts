@@ -7,12 +7,12 @@ const ordersFeatureSelector = createFeatureSelector<OrdersState>(
 
 export const selectOrdersIsLoading = createSelector(
   ordersFeatureSelector,
-  (state) => state.isLoading
+  (state) => state?.isLoading
 );
 
 export const selectOrdersError = createSelector(
   ordersFeatureSelector,
-  (state) => state.error
+  (state) => state?.error
 );
 
 export const selectAllOrders = createSelector(

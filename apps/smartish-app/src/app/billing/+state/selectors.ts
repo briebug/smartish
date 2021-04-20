@@ -7,12 +7,12 @@ const billingFeatureSelector = createFeatureSelector<BillingsState>(
 
 export const selectBillingIsLoading = createSelector(
   billingFeatureSelector,
-  (state) => state.isLoading
+  (state) => state?.isLoading
 );
 
 export const selectBillingError = createSelector(
   billingFeatureSelector,
-  (state) => state.error
+  (state) => state?.error
 );
 
 export const selectAllBillings = createSelector(

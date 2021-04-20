@@ -4,17 +4,17 @@ import { PRODUCT_FEATURE_SLICE } from './reducer';
 
 const productFeatureSelector = createSelector(
   catalogFeatureSelector,
-  (state) => state.product
+  (state) => state?.product
 );
 
 export const selectProductIsLoading = createSelector(
   productFeatureSelector,
-  (state) => state.isLoading
+  (state) => state?.isLoading
 );
 
 export const selectProductError = createSelector(
   productFeatureSelector,
-  (state) => state.error
+  (state) => state?.error
 );
 
 export const selectAllProducts = createSelector(

@@ -7,12 +7,12 @@ const shippingFeatureSelector = createFeatureSelector<ShippingState>(
 
 export const selectShippingIsLoading = createSelector(
   shippingFeatureSelector,
-  (state) => state.isLoading
+  (state) => state?.isLoading
 );
 
 export const selectShippingError = createSelector(
   shippingFeatureSelector,
-  (state) => state.error
+  (state) => state?.error
 );
 
 export const selectAllShippings = createSelector(
