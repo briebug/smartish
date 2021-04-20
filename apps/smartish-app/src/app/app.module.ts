@@ -13,6 +13,7 @@ import { BillingModule } from './billing';
 import { CatalogModule } from './catalog';
 import { CustomersModule } from './customers';
 import { OrdersModule } from './orders/';
+import { ShippingModule } from './shipping';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { OrdersModule } from './orders/';
     CatalogModule,
     OrdersModule,
     CustomersModule,
+    ShippingModule,
   ],
   providers: [{ provide: SMARTISH_STORE_TOKEN, useClass: Store }],
   bootstrap: [AppComponent],

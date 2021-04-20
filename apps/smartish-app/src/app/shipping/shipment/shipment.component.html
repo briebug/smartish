@@ -1,0 +1,18 @@
+<ng-container *ngIf="shipment$ | async as shipment">
+
+    <h1>
+       Shipping Invoice #: {{ shipment.id }}
+    </h1>
+    
+    <mat-card>
+        <mat-card-content>
+            <mat-icon>more_vert</mat-icon>
+            <h3>Recipient: {{ shipment.to.firstName }} {{ shipment.to.lastName }}</h3>
+            <h3>Date: {{ shipment.date | date }}</h3>
+            <h3>Amount: {{ shipment.amount | currency }}</h3>
+
+            <button mat-raised-button color="primary" (click)="save(shipment)">Save</button>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>
