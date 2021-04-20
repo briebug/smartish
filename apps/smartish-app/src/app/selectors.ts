@@ -4,17 +4,14 @@ import {
   selectBillingIsLoading,
 } from './billing/+state/selectors';
 import {
-  selectAllProducts,
   selectProductError,
   selectProductIsLoading,
 } from './catalog/+state/product/+state/selectors';
 import {
-  selectAllCustomers,
   selectCustomersError,
   selectCustomersIsLoading,
 } from './customers/+state/selectors';
 import {
-  selectAllOrders,
   selectOrdersError,
   selectOrdersIsLoading,
 } from './orders/+state/selectors';
@@ -64,30 +61,4 @@ export const selectError: MemoizedSelector<object, string> = createSelector(
     ordersError ||
     billingError ||
     shippingError
-);
-
-export const selectDashboardPreviews = createSelector(
-  selectAllOrders,
-  selectAllCustomers,
-  selectAllProducts,
-  (orders, customers, products) => [
-    {
-      title: 'Orders',
-      subtitle: 'Today',
-      total: orders.length,
-      url: '/orders',
-    },
-    {
-      title: 'Customers',
-      subtitle: 'Today',
-      total: customers.length,
-      url: '/customers',
-    },
-    {
-      title: 'Products',
-      subtitle: 'Today',
-      total: products.length,
-      url: '/products',
-    },
-  ]
 );

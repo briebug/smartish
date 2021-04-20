@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectDashboardPreviews } from '../selectors';
+import { selectDashboardPreviews } from './selectors';
 
 @Component({
   selector: 'smartish-admin',

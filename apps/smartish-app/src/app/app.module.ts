@@ -7,19 +7,16 @@ import {
   SMARTISH_STORE_TOKEN,
 } from '@briebug/smartish-ngrx';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { Store, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { AdminComponent } from './admin/admin.component';
-import { DashboardPreviewComponent } from './admin/dashboard-preview/dashboard-preview.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
-  declarations: [AppComponent, AdminComponent, DashboardPreviewComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -30,8 +27,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     EffectsModule.forRoot([]),
     SharedModule,
     AppRoutingModule,
-    MatCardModule,
-    MatIconModule,
+    AdminModule,
     BrowserAnimationsModule,
   ],
   providers: [{ provide: SMARTISH_STORE_TOKEN, useClass: Store }],

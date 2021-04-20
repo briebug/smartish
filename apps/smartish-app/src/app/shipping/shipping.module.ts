@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShippingComponent } from './shipping.component';
+import { NgModule } from '@angular/core';
+import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
+import { ShippingStateModule } from './+state/shipping-state.module';
 import { ShipmentComponent } from './shipment/shipment.component';
 import { ShippingRoutingModule } from './shipping-routing.module';
-import { ShippingStateModule } from './+state/shipping-state.module';
-import { SharedModule } from '../shared/shared.module';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
+import { ShippingComponent } from './shipping.component';
 
 @NgModule({
   declarations: [ShippingComponent, ShipmentComponent],
@@ -17,10 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
     ShippingRoutingModule,
     ShippingStateModule,
     SharedModule,
-    MatCardModule,
-    MatChipsModule,
-    MatTableModule,
-    MatIconModule,
+    MaterialModule,
   ],
 })
 export class ShippingModule {}
