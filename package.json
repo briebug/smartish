@@ -40,8 +40,10 @@
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
     "@nestjs/common": "^7.0.0",
+    "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/typeorm": "^7.1.5",
     "@ngrx/effects": "^11.1.0",
     "@ngrx/router-store": "^11.1.0",
     "@ngrx/store": "^11.1.0",
@@ -51,6 +53,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
+    "typeorm": "^0.2.32",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
