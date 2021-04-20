@@ -52,9 +52,7 @@
               "apps/smartish-app/src/favicon.ico",
               "apps/smartish-app/src/assets"
             ],
-            "styles": [
-              "apps/smartish-app/src/styles.scss"
-            ],
+            "styles": ["apps/smartish-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -90,7 +88,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "smartish-app:build"
+            "browserTarget": "smartish-app:build",
+            "proxyConfig": "apps/smartish-app/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -115,9 +114,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/smartish-app"
-          ],
+          "outputs": ["coverage/apps/smartish-app"],
           "options": {
             "jestConfig": "apps/smartish-app/jest.config.js",
             "passWithNoTests": true
@@ -146,9 +143,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/smartish-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/smartish-app-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -182,11 +177,59 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ngrx"
-          ],
+          "outputs": ["coverage/libs/ngrx"],
           "options": {
             "jestConfig": "libs/ngrx/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api": {
+      "root": "apps/api",
+      "sourceRoot": "apps/api/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/api",
+            "main": "apps/api/src/main.ts",
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "assets": ["apps/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/src/environments/environment.ts",
+                  "with": "apps/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/api"],
+          "options": {
+            "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
           }
         }
