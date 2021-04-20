@@ -52,7 +52,10 @@
               "apps/smartish-app/src/favicon.ico",
               "apps/smartish-app/src/assets"
             ],
-            "styles": ["apps/smartish-app/src/styles.scss"],
+            "styles": [
+              "apps/smartish-app/src/styles.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+            ],
             "scripts": []
           },
           "configurations": {
