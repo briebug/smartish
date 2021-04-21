@@ -6,7 +6,7 @@ import { BillingInvoice } from './+state/billing-invoice';
 
 @Injectable()
 export class BillingService {
-  private apiUrl = `${environment.baseUrl}/billings`;
+  private apiUrl = `${environment.baseUrl}/billing`;
 
   constructor(private readonly http: HttpClient) {}
 

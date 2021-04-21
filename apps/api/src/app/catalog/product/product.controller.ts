@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { Product } from './product';
 import { ProductService } from './product.service';
 
-@Controller('product')
+@Controller('products')
 export class ProductController {
   constructor(private readonly service: ProductService) {}
 
