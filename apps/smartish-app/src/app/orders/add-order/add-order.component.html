@@ -1,0 +1,79 @@
+<h1>
+    Add Order
+    
+</h1>
+<h4>Category / <strong>Add Order</strong></h4>
+
+<mat-card>
+    <mat-card-content>
+        <mat-icon>more_vert</mat-icon>
+        
+        <form [formGroup]="form">
+
+            <mat-form-field *ngIf="form.total">
+                <mat-label>Total</mat-label>
+                <input type="text" matInput [formControl]="form.total" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.payment">
+                <mat-label>Payments</mat-label>
+                <mat-select [formControl]="form.payment">
+                    <mat-option *ngFor="let option of form.paymentOptions" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.items">
+                <mat-label># of Items</mat-label>
+                <input type="number" matInput [formControl]="form.items" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.firstName">
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput [formControl]="form.Customer.firstName" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.lastName">
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput [formControl]="form.Customer.lastName" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.phone">
+                <mat-label>Phone</mat-label>
+                <input type="tel" matInput [formControl]="form.Customer.phone" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.email">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="form.Customer.email" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.Address.addressLine1">
+                <mat-label>Address Line 1</mat-label>
+                <input type="text" matInput [formControl]="form.Customer.Address.addressLine1" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.Address.city">
+                <mat-label>City</mat-label>
+                <input type="text" matInput [formControl]="form.Customer.Address.city" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.Address.state">
+                <mat-label>State</mat-label>
+                <mat-select [formControl]="form.Customer.Address.state">
+                    <mat-option *ngFor="let option of form.Customer.Address.stateOptions" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.Customer.Address.zip">
+                <mat-label>Zip</mat-label>
+                <input type="number" matInput [formControl]="form.Customer.Address.zip" />
+            </mat-form-field>
+
+            <button mat-raised-button routerLink="/orders">Cancel</button>
+            
+            <button class="save" mat-raised-button color="primary" (click)="save()">Save</button>
+        </form>
+
+
+    </mat-card-content>
+</mat-card>

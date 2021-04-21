@@ -1,0 +1,29 @@
+section {
+  background: #fff;
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+h3 {
+  padding: 0 2rem;
+  font-weight: bold;
+}
+
+mat-list-item {
+  margin-left: 1rem;
+}
+
+a {
+  color: #e65200;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #d75f2c;
+}
+
+span.menu-link {
+  padding: 1rem;
+}

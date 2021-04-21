@@ -1,34 +1,8 @@
-<form [formGroup]="form">
-  <div>
-    <label>Shell</label>
-    <select formControlName="shell">
-        <option></option>
-        <option value="Hard">Hard</option>
-        <option value="Soft">Soft</option>
-        <option value="Dorito Locos">Dorito Locos</option>
-        <option value="Chalupa">Chalupa</option>
-    </select>
-  </div>
-  <div>
-    <label>Meat</label>
-    <select formControlName="meat">
-      <option></option>
-      <option value="Chicken">Chicken</option>
-      <option value="Beef">Beef</option>
-      <option value="Pork">Pork</option>
-      <option value="Steak">Steak</option>
-    </select>
-  </div>
-  <div>
-    <label>Toppings</label>
-    <input formControlName="toppings" />
-  </div>
-</form>
+<smartish-menu></smartish-menu>
 
-<button type="button" (click)="addTaco.dispatch({ taco: form.value })">Add Taco via ngrxDispatch Directive</button>
-
-<smartish-quantity></smartish-quantity>
-
-<hr />
-
-<smartish-tacos></smartish-tacos>
+<section id="main">
+    <div class="content">
+        <smartish-loader></smartish-loader>
+        <router-outlet></router-outlet>
+    </div>
+</section>

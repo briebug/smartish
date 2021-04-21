@@ -1,0 +1,49 @@
+<ng-container *ngIf="product$ | async as product">
+
+    <h1>
+        {{ product.name }}
+        <span *ngIf="!!product.status"><mat-chip-list>
+            <mat-chip>{{ product.status }}</mat-chip>
+        </mat-chip-list>
+        </span>
+    </h1>
+    <h4>Category / <strong>{{ product.category?.name ? product.category.name : 'Unspecified' }}</strong></h4>
+    
+    <mat-card>
+        <mat-card-content>
+            <!-- <mat-icon>more_vert</mat-icon> -->
+
+            <button class="delete" mat-icon-button [matMenuTriggerFor]="productDetails" aria-label="Product Details">
+                <mat-icon>more_vert</mat-icon>
+                <mat-menu #productDetails>
+                    <button mat-menu-item (click)="delete(product)">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete {{ product.name }}</span>
+                    </button>
+                </mat-menu>
+            </button>
+
+            <h3>Description:</h3>
+            <p>{{ product.description }}</p>
+
+            <h3>Sku: {{ product.sku }}</h3>
+            <h3>Inventory: {{ product.inventory }}</h3>
+            <h3>Price: {{ product.price | currency }}</h3>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Sizes</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let size of product.sizes" value="size">{{ size }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+              
+            <div>
+                <img *ngFor="let photo of product.photos" [src]="photo.source" [alt]="photo.title" />
+            </div>
+
+            <button class="cancel" mat-raised-button routerLink="/catalog">Cancel</button>
+            <button class="save" mat-raised-button color="primary" (click)="save(product)">Save</button>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>

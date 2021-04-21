@@ -1,0 +1,16 @@
+mat-card {
+  width: 25%;
+  float: left;
+  margin: 2rem;
+
+  mat-icon {
+    float: right;
+  }
+
+  mat-card-content {
+    p {
+      font-size: 4rem;
+      padding: 1rem;
+    }
+  }
+}

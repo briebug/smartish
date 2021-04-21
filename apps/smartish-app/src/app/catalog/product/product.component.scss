@@ -1,0 +1,21 @@
+.mat-chip.mat-standard-chip {
+  background-color: #63923b;
+  color: #fff;
+}
+
+img {
+  width: 25%;
+}
+
+button.save,
+button.cancel {
+  margin: 0 1rem 0 0;
+}
+
+button.save {
+  background-color: #63923b !important;
+}
+
+button.delete {
+  float: right;
+}

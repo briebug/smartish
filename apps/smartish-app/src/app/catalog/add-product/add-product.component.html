@@ -1,0 +1,51 @@
+<h1>
+    Add Product
+    
+</h1>
+<h4>Category / <strong>Add Product</strong></h4>
+
+<mat-card>
+    <mat-card-content>
+        <mat-icon>more_vert</mat-icon>
+        
+        <form [formGroup]="form">
+            <mat-form-field *ngIf="form.name">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput [formControl]="form.name" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.description">
+                <mat-label>Description</mat-label>
+                <textarea matInput [formControl]="form.description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.quantity">
+                <mat-label>Quantity</mat-label>
+                <input type="number" matInput [formControl]="form.quantity" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.sizes">
+                <mat-label>Dizes</mat-label>
+                <mat-select [formControl]="form.sizes">
+                    <mat-option *ngFor="let option of form.sizeOptions" [value]="option">{{ option }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.price">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput [formControl]="form.price" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="form.sku">
+                <mat-label>Sku</mat-label>
+                <input type="text" matInput [formControl]="form.sku" />
+            </mat-form-field>
+
+            <button mat-raised-button routerLink="/catalog">Cancel</button>
+            
+            <button class="save" mat-raised-button color="primary" (click)="save()">Save</button>
+        </form>
+
+
+    </mat-card-content>
+</mat-card>

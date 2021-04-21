@@ -1,0 +1,31 @@
+<h1>Customers</h1>
+<h4>A Master List of Briebug Customers</h4>
+
+<mat-card>
+    <mat-card-content *ngIf="customers$ | async as customers">
+
+        <table mat-table [dataSource]="customers" class="mat-elevation-z1">
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Customer</th>
+                <td mat-cell *matCellDef="let customer"><a [routerLink]="['/customers', customer.id]">{{ customer.firstName }} {{ customer.lastName }}</a></td>
+            </ng-container>
+            
+            <ng-container matColumnDef="totalOrders">
+                <th mat-header-cell *matHeaderCellDef>Total Orders</th>
+                <td mat-cell *matCellDef="let customer">{{ customer.totalOrders }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="totalSpent">
+                <th mat-header-cell *matHeaderCellDef>Total Spent</th>
+                <td mat-cell *matCellDef="let customer">{{ customer.totalSpent | currency }}</td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <smartish-no-item-found *ngIf="customers.length === 0"></smartish-no-item-found>
+
+        <smartish-pagination [paginator]="paginator$ | async" (page)="updatePagination($event)"></smartish-pagination>
+    </mat-card-content>
+</mat-card>

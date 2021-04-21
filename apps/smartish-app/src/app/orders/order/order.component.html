@@ -1,0 +1,32 @@
+<ng-container *ngIf="order$ | async as order">
+
+    <h1>Order #{{ order.id }}
+        <span *ngIf="!!order.fulfillment"><mat-chip-list>
+            <mat-chip>{{ order.fulfillment }}</mat-chip>
+        </mat-chip-list></span>
+    </h1>
+    
+    <mat-card>
+        <mat-card-content>
+            <button class="delete" mat-icon-button [matMenuTriggerFor]="orderDetails" aria-label="Order Details">
+                <mat-icon>more_vert</mat-icon>
+                <mat-menu #orderDetails>
+                    <button mat-menu-item (click)="delete(order)">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Order</span>
+                    </button>
+                </mat-menu>
+            </button>
+
+            <h3>Customer: {{ order.customer.firstName }} {{ order.customer.lastName }}</h3>
+            <h3>Email: {{ order.customer.email }}</h3>
+            <h3>Total: {{ order.total }}</h3>
+            <h3>Payment: {{ order.payment }}</h3>
+            <h3>Items: {{ order.items }}</h3>
+
+            <button class="cancel" mat-raised-button routerLink="/orders">Cancel</button>
+            <button class="save" mat-raised-button color="primary" (click)="save(order)">Save</button>
+
+        </mat-card-content>
+    </mat-card>
+</ng-container>
