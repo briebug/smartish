@@ -4,7 +4,7 @@
 <button mat-raised-button color="primary" routerLink="product/add">Add Product</button>
 
 <mat-card>
-    <mat-card-content *ngIf="catalog$ | async as catalog">
+    <mat-card-content *ngIf="catalog$ | smartSelect | async as catalog">
 
         <table mat-table [dataSource]="catalog" class="mat-elevation-z1">
             <ng-container matColumnDef="name">
@@ -37,6 +37,6 @@
 
         <smartish-no-item-found *ngIf="catalog.length === 0"></smartish-no-item-found>
 
-        <smartish-pagination [paginator]="paginator$ | async" (page)="updatePagination($event)"></smartish-pagination>
+        <smartish-pagination [paginator]="paginator$ | smartSelect | async" (page)="updatePagination($event)"></smartish-pagination>
     </mat-card-content>
 </mat-card>

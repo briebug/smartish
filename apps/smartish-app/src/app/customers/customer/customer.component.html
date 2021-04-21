@@ -1,4 +1,4 @@
-<ng-container *ngIf="customer$ | async as customer">
+<ng-container *ngIf="customer$ | smartSelect | async as customer">
 
     <h1>
         {{ customer.firstName }} {{ customer.lastName }}

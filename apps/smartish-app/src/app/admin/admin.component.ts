@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { selectDashboardPreviews } from './selectors';
 
 @Component({
@@ -8,7 +7,5 @@ import { selectDashboardPreviews } from './selectors';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-  previews$ = this.store.select(selectDashboardPreviews);
-
-  constructor(private readonly store: Store) {}
+  previews$ = selectDashboardPreviews;
 }

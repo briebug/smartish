@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component } from '@angular/core';
+import { smartDispatch } from '@briebug/smartish-ngrx';
 import { updateCustomer } from '../+state/actions';
-import { Customer } from '../+state/customer';
 import { selectCustomer } from '../+state/selectors';
 
 @Component({
@@ -10,11 +9,6 @@ import { selectCustomer } from '../+state/selectors';
   styleUrls: ['./customer.component.scss'],
 })
 export class CustomerComponent {
-  customer$ = this.store.select(selectCustomer);
-
-  constructor(private readonly store: Store) {}
-
-  save(customer: Customer): void {
-    this.store.dispatch(updateCustomer({ customer }));
-  }
+  customer$ = selectCustomer;
+  save = smartDispatch(updateCustomer);
 }

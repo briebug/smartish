@@ -12,6 +12,7 @@ import { LogoComponent } from './menu/logo/logo.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
+import { SmartishNgRxPipesModule } from '@briebug/smartish-ngrx';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MenuComponent } from './menu/menu.component';
     CustomersStoreModule,
     CatalogStateModule,
     EffectsModule.forFeature([AdminEffects]),
+    SmartishNgRxPipesModule,
   ],
   exports: [MenuComponent],
 })

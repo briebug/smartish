@@ -2,7 +2,7 @@
 <h4>A Master List of Briebug Customers</h4>
 
 <mat-card>
-    <mat-card-content *ngIf="customers$ | async as customers">
+    <mat-card-content *ngIf="customers$ | smartSelect | async as customers">
 
         <table mat-table [dataSource]="customers" class="mat-elevation-z1">
             <ng-container matColumnDef="email">
@@ -26,6 +26,6 @@
 
         <smartish-no-item-found *ngIf="customers.length === 0"></smartish-no-item-found>
 
-        <smartish-pagination [paginator]="paginator$ | async" (page)="updatePagination($event)"></smartish-pagination>
+        <smartish-pagination [paginator]="paginator$ | smartSelect | async" (page)="updatePagination($event)"></smartish-pagination>
     </mat-card-content>
 </mat-card>

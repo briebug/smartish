@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Paginator } from '../interfaces';
+import { smartDispatch } from '@briebug/smartish-ngrx';
 import { updateOrderPagination } from './+state/actions';
 import { Order } from './+state/order';
 import { selectAllOrders, selectOrderPaginator } from './+state/selectors';
@@ -13,7 +12,7 @@ type OrderColumnKeys = keyof Order;
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent {
-  orders$ = this.store.select(selectAllOrders);
+  orders$ = selectAllOrders;
   displayedColumns: OrderColumnKeys[] = [
     'id',
     'date',
@@ -23,12 +22,6 @@ export class OrdersComponent {
     'fulfillment',
     'items',
   ];
-
-  paginator$ = this.store.select(selectOrderPaginator);
-
-  constructor(private readonly store: Store) {}
-
-  updatePagination(pagination: Paginator): void {
-    this.store.dispatch(updateOrderPagination({ pagination }));
-  }
+  paginator$ = selectOrderPaginator;
+  updatePagination = smartDispatch(updateOrderPagination);
 }

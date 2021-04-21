@@ -1,4 +1,4 @@
-<ng-container *ngIf="bill$ | async as bill">
+<ng-container *ngIf="bill$ | smartSelect | async as bill">
     <h1>
        Invoice #: {{ bill.id }}
     </h1>

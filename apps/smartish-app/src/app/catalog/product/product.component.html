@@ -1,4 +1,4 @@
-<ng-container *ngIf="product$ | async as product">
+<ng-container *ngIf="product$ | smartSelect | async as product">
 
     <h1>
         {{ product.name }}

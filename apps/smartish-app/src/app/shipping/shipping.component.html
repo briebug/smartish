@@ -2,7 +2,7 @@
 <h4>A Master List of Briebug Shipping Invoices</h4>
 
 <mat-card>
-    <mat-card-content *ngIf="shippings$ | async as shippings">
+    <mat-card-content *ngIf="shippings$ | smartSelect | async as shippings">
 
         <table mat-table [dataSource]="shippings" class="mat-elevation-z1">
             <ng-container matColumnDef="id">
@@ -40,6 +40,6 @@
 
         <smartish-no-item-found *ngIf="shippings.length === 0"></smartish-no-item-found>
         
-        <smartish-pagination [paginator]="paginator$ | async" (page)="updatePagination($event)"></smartish-pagination>
+        <smartish-pagination [paginator]="paginator$ | smartSelect | async" (page)="updatePagination($event)"></smartish-pagination>
     </mat-card-content>
 </mat-card>
