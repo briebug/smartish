@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
+import { MaterialModule } from '../../material/material.module';
 
 import { AddProductComponent } from './add-product.component';
 
@@ -8,9 +12,15 @@ describe('AddProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddProductComponent ]
-    })
-    .compileComponents();
+      declarations: [AddProductComponent],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        SmartishNgRxTestingModule.forRoot({}),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

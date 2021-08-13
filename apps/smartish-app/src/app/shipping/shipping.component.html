@@ -41,6 +41,5 @@
         <smartish-no-item-found *ngIf="shippings.length === 0"></smartish-no-item-found>
         
         <smartish-pagination [paginator]="paginator$ | smartSelect | async" (page)="updatePagination({ pagination: $event })"></smartish-pagination>
-        <button (click)="testDispatch()">Test</button>
     </mat-card-content>
 </mat-card>

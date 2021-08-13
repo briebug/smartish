@@ -11,13 +11,13 @@
             <h3>Phone: {{ customer.phone }}</h3>
             <h3>Email: {{ customer.email }}</h3>
             <h3>Address:<br />
-                {{ customer.address.addressLine1 }}<br />
-                {{ customer.address.city }}, {{ customer.address.state }} {{ customer.address.zip }}
+                {{ customer.address?.addressLine1 }}<br />
+                {{ customer.address?.city }}, {{ customer.address?.state }} {{ customer.address?.zip }}
             </h3>
             <h3>Total Orders: {{ customer.totalOrders }}</h3>
             <h3>Total Spent: {{ customer.totalSpent }}</h3>
 
-            <button mat-raised-button color="primary" (click)="save(customer)">Save</button>
+            <button mat-raised-button color="primary" (click)="save({ customer: customer })">Save</button>
 
         </mat-card-content>
     </mat-card>

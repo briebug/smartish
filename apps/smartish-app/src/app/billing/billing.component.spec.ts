@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
+import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { BillingComponent } from './billing.component';
 
@@ -8,9 +11,13 @@ describe('BillingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BillingComponent ]
-    })
-    .compileComponents();
+      declarations: [BillingComponent],
+      imports: [
+        SharedModule,
+        MaterialModule,
+        SmartishNgRxTestingModule.forRoot({}),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

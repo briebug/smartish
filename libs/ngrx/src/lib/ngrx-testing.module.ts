@@ -6,14 +6,15 @@ import {
   provideMockStore,
 } from '@ngrx/store/testing';
 import { InjectorLocator } from './injector-locator/injector-locator';
-import { injectorLocationFactory } from './injector-locator/injector-locator.factory';
 import { INJECTOR_LOCATOR_TOKEN } from './injector-locator/injector-locator.token';
 import { provideInjectorLocator } from './injector-locator/provide-injector-locator';
+import { SmartishNgRxModule } from './ngrx.module';
 import { SmartishNgRxPipesTestingModule } from './pipes/ngrx-pipes-testing.module';
 import { SMARTISH_STORE_TOKEN } from './token';
 
 @NgModule({
-  exports: [SmartishNgRxPipesTestingModule],
+  imports: [],
+  exports: [SmartishNgRxPipesTestingModule, SmartishNgRxModule],
 })
 export class SmartishNgRxTestingModule {
   constructor(
