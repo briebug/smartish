@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
 
 import { LoaderComponent } from './loader.component';
 
@@ -8,9 +9,9 @@ describe('LoaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
-    })
-    .compileComponents();
+      declarations: [LoaderComponent],
+      imports: [SmartishNgRxTestingModule.forRoot({})],
+    }).compileComponents();
   });
 
   beforeEach(() => {

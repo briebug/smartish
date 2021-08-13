@@ -16,7 +16,7 @@
             <button class="delete" mat-icon-button [matMenuTriggerFor]="productDetails" aria-label="Product Details">
                 <mat-icon>more_vert</mat-icon>
                 <mat-menu #productDetails>
-                    <button mat-menu-item (click)="delete(product)">
+                    <button mat-menu-item (click)="delete({ product: product })">
                         <mat-icon>delete</mat-icon>
                         <span>Delete {{ product.name }}</span>
                     </button>
@@ -42,7 +42,7 @@
             </div>
 
             <button class="cancel" mat-raised-button routerLink="/catalog">Cancel</button>
-            <button class="save" mat-raised-button color="primary" (click)="save(product)">Save</button>
+            <button class="save" mat-raised-button color="primary" (click)="save({ product: product })">Save</button>
 
         </mat-card-content>
     </mat-card>
