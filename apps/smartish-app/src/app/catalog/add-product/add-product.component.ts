@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { smartDispatch } from '@briebug/smartish-ngrx';
 import { Store } from '@ngrx/store';
 import { saveProduct } from '../+state/product/+state/actions';
 import { Product } from '../+state/product/product';
@@ -11,10 +12,5 @@ import { AddProductForm } from './add-product.form';
 })
 export class AddProductComponent {
   form = new AddProductForm();
-
-  constructor(private readonly store: Store) {}
-
-  save(): void {
-    this.store.dispatch(saveProduct({ product: this.form.value as Product }));
-  }
+  save = smartDispatch(saveProduct);
 }

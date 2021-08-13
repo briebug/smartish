@@ -5,7 +5,6 @@ export { SmartishNgRxPipesTestingModule } from './lib/pipes/ngrx-pipes-testing.m
 export { SmartishNgRxPipesModule } from './lib/pipes/ngrx-pipes.module';
 export { SmartSelectPipe } from './lib/pipes/smart-select.pipe';
 export { MockSmartSelectPipe } from './lib/pipes/smart-select.pipe.mock';
-export { smartAction } from './lib/utils/smart-action';
 export { smartDispatch } from './lib/utils/smart-dispatch';
 export { SmartAbstract } from './lib/utils/smart-abstract';
 export { SMARTISH_STORE_TOKEN } from './lib/token';

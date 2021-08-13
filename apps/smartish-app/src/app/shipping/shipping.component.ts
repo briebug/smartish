@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Paginator } from '../interfaces';
-import { ShippingInvoice } from './+state/shipping-invoice';
+import { smartDispatch } from '@briebug/smartish-ngrx';
+import { testAction, updateShippingPagination } from './+state/actions';
 import {
   selectAllShippings,
   selectShippingPaginator,
 } from './+state/selectors';
-import { updateShippingPagination } from './+state/actions';
+import { ShippingInvoice } from './+state/shipping-invoice';
 
 type ShippingInvoiceColumnKeys = keyof ShippingInvoice;
 
@@ -16,8 +15,8 @@ type ShippingInvoiceColumnKeys = keyof ShippingInvoice;
   styleUrls: ['./shipping.component.scss'],
 })
 export class ShippingComponent {
-  shippings$ = this.store.select(selectAllShippings);
-  paginator$ = this.store.select(selectShippingPaginator);
+  shippings$ = selectAllShippings;
+  paginator$ = selectShippingPaginator;
   displayedColumns: ShippingInvoiceColumnKeys[] = [
     'id',
     'to',
@@ -25,10 +24,6 @@ export class ShippingComponent {
     'status',
     'amount',
   ];
-
-  constructor(private readonly store: Store) {}
-
-  updatePagination(pagination: Paginator): void {
-    this.store.dispatch(updateShippingPagination({ pagination }));
-  }
+  updatePagination = smartDispatch(updateShippingPagination);
+  testDispatch = smartDispatch(testAction);
 }

@@ -1,4 +1,4 @@
-<ng-container *ngIf="order$ | async as order">
+<ng-container *ngIf="order$ | smartSelect | async as order">
 
     <h1>Order #{{ order.id }}
         <span *ngIf="!!order.fulfillment"><mat-chip-list>
@@ -11,7 +11,7 @@
             <button class="delete" mat-icon-button [matMenuTriggerFor]="orderDetails" aria-label="Order Details">
                 <mat-icon>more_vert</mat-icon>
                 <mat-menu #orderDetails>
-                    <button mat-menu-item (click)="delete(order)">
+                    <button mat-menu-item (click)="delete({ order: order })">
                         <mat-icon>delete</mat-icon>
                         <span>Delete Order</span>
                     </button>
@@ -25,7 +25,7 @@
             <h3>Items: {{ order.items }}</h3>
 
             <button class="cancel" mat-raised-button routerLink="/orders">Cancel</button>
-            <button class="save" mat-raised-button color="primary" (click)="save(order)">Save</button>
+            <button class="save" mat-raised-button color="primary" (click)="save({ order: order })">Save</button>
 
         </mat-card-content>
     </mat-card>

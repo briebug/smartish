@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SmartishNgRxPipesModule } from '@briebug/smartish-ngrx';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { CustomersStoreModule } from './+state/customers-state.module';
@@ -15,6 +16,7 @@ import { CustomersComponent } from './customers.component';
     CustomersStoreModule,
     MaterialModule,
     SharedModule,
+    SmartishNgRxPipesModule,
   ],
 })
 export class CustomersModule {}

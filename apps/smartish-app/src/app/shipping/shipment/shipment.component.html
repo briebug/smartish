@@ -1,4 +1,4 @@
-<ng-container *ngIf="shipment$ | async as shipment">
+<ng-container *ngIf="shipment$ | smartSelect | async as shipment">
 
     <h1>
        Shipping Invoice #: {{ shipment.id }}

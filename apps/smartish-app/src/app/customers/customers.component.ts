@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Paginator } from 'apps/smartish-app/src/app/interfaces';
+import { smartDispatch } from '@briebug/smartish-ngrx';
 import { updateCustomerPagination } from './+state/actions';
 import { Customer } from './+state/customer';
 import {
@@ -16,17 +15,12 @@ type CustomerColumnKeys = keyof Customer;
   styleUrls: ['./customers.component.scss'],
 })
 export class CustomersComponent {
-  customers$ = this.store.select(selectAllCustomers);
+  customers$ = selectAllCustomers;
   displayedColumns: CustomerColumnKeys[] = [
     'email',
     'totalOrders',
     'totalSpent',
   ];
-  paginator$ = this.store.select(selectCustomerPaginator);
-
-  constructor(private readonly store: Store) {}
-
-  updatePagination(pagination: Paginator): void {
-    this.store.dispatch(updateCustomerPagination({ pagination }));
-  }
+  paginator$ = selectCustomerPaginator;
+  updatePagination = smartDispatch(updateCustomerPagination);
 }

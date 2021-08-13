@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Paginator } from '../interfaces';
+import { smartDispatch } from '@briebug/smartish-ngrx';
 import {
   BillingInvoice,
   selectAllBillings,
@@ -16,13 +15,8 @@ type BillingInvoiceColumnKeys = keyof BillingInvoice;
   styleUrls: ['./billing.component.scss'],
 })
 export class BillingComponent {
-  billings$ = this.store.select(selectAllBillings);
-  paginator$ = this.store.select(selectBillingPaginator);
+  billings$ = selectAllBillings;
+  paginator$ = selectBillingPaginator;
   displayedColumns: BillingInvoiceColumnKeys[] = ['id', 'to', 'date', 'amount'];
-
-  constructor(private readonly store: Store) {}
-
-  updatePagination(pagination: Paginator): void {
-    this.store.dispatch(updateBillingPagination({ pagination }));
-  }
+  updatePagination = smartDispatch(updateBillingPagination);
 }

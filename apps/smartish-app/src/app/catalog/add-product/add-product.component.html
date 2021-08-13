@@ -43,7 +43,7 @@
 
             <button mat-raised-button routerLink="/catalog">Cancel</button>
             
-            <button class="save" mat-raised-button color="primary" (click)="save()">Save</button>
+            <button class="save" mat-raised-button color="primary" (click)="save({ product: form.value })">Save</button>
         </form>
 
 

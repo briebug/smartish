@@ -40,3 +40,7 @@ export const updateShippingPagination = createAction(
   '[SHIPPING PAGE] Update Pagination Event',
   props<{ pagination: Paginator }>()
 );
+
+export const testAction = createAction(
+  '[SHIPPING PAGE] Does this work propless'
+);

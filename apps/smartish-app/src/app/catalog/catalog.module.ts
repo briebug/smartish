@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SmartishNgRxPipesModule } from '@briebug/smartish-ngrx';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { CatalogStateModule } from './+state/catalog-state.module';
@@ -19,6 +20,7 @@ import { ProductComponent } from './product/product.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    SmartishNgRxPipesModule,
   ],
 })
 export class CatalogModule {}
