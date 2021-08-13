@@ -4,6 +4,11 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'admin',
+    pathMatch: 'full',
+  },
+  {
     path: 'admin',
     component: AdminComponent,
   },

@@ -12,66 +12,66 @@
 
             <mat-form-field *ngIf="form.total">
                 <mat-label>Total</mat-label>
-                <input type="text" matInput [formControl]="form.total" />
+                <input data-e2e="addOrderFormTotal" type="text" matInput [formControl]="form.total" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.payment">
                 <mat-label>Payments</mat-label>
-                <mat-select [formControl]="form.payment">
+                <mat-select data-e2e="addOrderFormPayment" [formControl]="form.payment">
                     <mat-option *ngFor="let option of form.paymentOptions" [value]="option">{{ option }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field *ngIf="form.items">
                 <mat-label># of Items</mat-label>
-                <input type="number" matInput [formControl]="form.items" />
+                <input data-e2e="addOrderFormNumberOfItems" type="number" matInput [formControl]="form.items" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.firstName">
                 <mat-label>First Name</mat-label>
-                <input type="text" matInput [formControl]="form.Customer.firstName" />
+                <input data-e2e="addOrderFormFirstName" type="text" matInput [formControl]="form.Customer.firstName" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.lastName">
                 <mat-label>Last Name</mat-label>
-                <input type="text" matInput [formControl]="form.Customer.lastName" />
+                <input data-e2e="addOrderFormLastName" type="text" matInput [formControl]="form.Customer.lastName" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.phone">
                 <mat-label>Phone</mat-label>
-                <input type="tel" matInput [formControl]="form.Customer.phone" />
+                <input data-e2e="addOrderFormPhone" type="tel" matInput [formControl]="form.Customer.phone" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.email">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="form.Customer.email" />
+                <input data-e2e="addOrderFormEmail" type="email" matInput [formControl]="form.Customer.email" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.Address.addressLine1">
                 <mat-label>Address Line 1</mat-label>
-                <input type="text" matInput [formControl]="form.Customer.Address.addressLine1" />
+                <input data-e2e="addOrderFormAddressLine1" type="text" matInput [formControl]="form.Customer.Address.addressLine1" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.Address.city">
                 <mat-label>City</mat-label>
-                <input type="text" matInput [formControl]="form.Customer.Address.city" />
+                <input data-e2e="addOrderFormCity" type="text" matInput [formControl]="form.Customer.Address.city" />
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.Address.state">
                 <mat-label>State</mat-label>
-                <mat-select [formControl]="form.Customer.Address.state">
+                <mat-select data-e2e="addOrderFormState" [formControl]="form.Customer.Address.state">
                     <mat-option *ngFor="let option of form.Customer.Address.stateOptions" [value]="option">{{ option }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field *ngIf="form.Customer.Address.zip">
                 <mat-label>Zip</mat-label>
-                <input type="number" matInput [formControl]="form.Customer.Address.zip" />
+                <input data-e2e="addOrderFormZip" type="number" matInput [formControl]="form.Customer.Address.zip" />
             </mat-form-field>
 
-            <button mat-raised-button routerLink="/orders">Cancel</button>
+            <button data-e2e="addOrderFormCancelButton" mat-raised-button routerLink="/orders">Cancel</button>
             
-            <button class="save" mat-raised-button color="primary" (click)="save({ order: form.value })">Save</button>
+            <button data-e2e="addOrderFormSaveButton" class="save" mat-raised-button color="primary" (click)="save({ order: form.value })">Save</button>
         </form>
 
 

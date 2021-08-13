@@ -1,13 +1,12 @@
-import { getGreeting } from '../support/app.po';
-
 describe('smartish-app', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.server();
+    cy.visit('/');
+  });
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to smartish-app!');
+  it('should display dashboard', () => {
+    cy.get('h1').should('contain', 'Dashboard');
+    cy.get('smartish-dashboard-preview').should('have.length', 3);
+    cy.location().should((loc) => expect(loc.href).to.contain('/admin'));
   });
 });

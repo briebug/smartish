@@ -8,10 +8,10 @@
     
     <mat-card>
         <mat-card-content>
-            <button class="delete" mat-icon-button [matMenuTriggerFor]="orderDetails" aria-label="Order Details">
+            <button data-e2e="moreInfoOrderButton" class="delete" mat-icon-button [matMenuTriggerFor]="orderDetails" aria-label="Order Details">
                 <mat-icon>more_vert</mat-icon>
                 <mat-menu #orderDetails>
-                    <button mat-menu-item (click)="delete({ order: order })">
+                    <button data-e2e="deleteOrderButton" mat-menu-item (click)="delete({ order: order })">
                         <mat-icon>delete</mat-icon>
                         <span>Delete Order</span>
                     </button>
