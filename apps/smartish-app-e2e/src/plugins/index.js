@@ -19,4 +19,13 @@ module.exports = (on, config) => {
 
   // Preprocess Typescript file using Nx helper
   on('file:preprocessor', preprocessTypescript(config));
+
+  config.baseUrl = process.env.CYPRESS_BASE_URL_OVERRIDE || 'http://localhost:4200';
+  config.env.microservicesEndpoint = process.env.CYPRESS_MICROSERVICES_URL_OVERRIDE || 'http://localhost:3333';
+
+  if (config.env.allowScreenshots) {
+    Cypress.Screenshot.defaults({ screenshotOnRunFailure: true });
+  }
+
+  return config;
 };

@@ -1,7 +1,7 @@
 <h1>Orders</h1>
 <h4>A Master List of Briebug Orders</h4>
 
-<button mat-raised-button color="primary" routerLink="orders/add">Add Order</button>
+<button mat-raised-button color="primary" routerLink="orders/add" data-e2e="orders.addButton">Add Order</button>
 
 <mat-card>
     <mat-card-content *ngIf="orders$ | smartSelect | async as orders">
