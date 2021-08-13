@@ -1,10 +1,7 @@
-import { SMARTISH_STORE_TOKEN } from '@briebug/smartish-ngrx';
-import { ActionCreator, Creator, Store } from '@ngrx/store';
-import {
-  FunctionWithParametersType,
-  TypedAction,
-} from '@ngrx/store/src/models';
+import { ActionCreator, Store } from '@ngrx/store';
+import { TypedAction } from '@ngrx/store/src/models';
 import { InjectorLocator } from '../injector-locator/injector-locator';
+import { SMARTISH_STORE_TOKEN } from '../token';
 
 export const smartDispatch = <T extends string, P extends object>(
   action:

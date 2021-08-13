@@ -71,7 +71,7 @@
 
             <button mat-raised-button routerLink="/orders">Cancel</button>
             
-            <button class="save" mat-raised-button color="primary" (click)="save()">Save</button>
+            <button class="save" mat-raised-button color="primary" (click)="save({ order: form.value })">Save</button>
         </form>
 
 

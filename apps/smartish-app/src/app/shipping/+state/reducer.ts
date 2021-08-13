@@ -39,10 +39,7 @@ const reducer = createReducer(
   })),
   on(updateShippingPagination, (state, { pagination }) => ({
     ...state,
-    pagination: {
-      ...state.pagination,
-      ...pagination,
-    },
+    pagination,
   })),
   on(getShippingInvoices, (state) => ({ ...state, isLoading: true })),
   on(getShippingInvoicesSuccess, (state, { shipping }) => ({

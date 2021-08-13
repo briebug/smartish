@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { smartDispatch } from '@briebug/smartish-ngrx';
-import { updateShippingPagination } from './+state/actions';
+import { testAction, updateShippingPagination } from './+state/actions';
 import {
   selectAllShippings,
   selectShippingPaginator,
@@ -25,4 +25,5 @@ export class ShippingComponent {
     'amount',
   ];
   updatePagination = smartDispatch(updateShippingPagination);
+  testDispatch = smartDispatch(testAction);
 }
