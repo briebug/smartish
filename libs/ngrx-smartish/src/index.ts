@@ -1,0 +1,10 @@
+export { NgRxSmartishComponent } from './lib/components/ngrx-smartish.component';
+export { NgRxSmartishTestingModule } from './lib/ngrx-smartish-testing.module';
+export { NgRxSmartishModule } from './lib/ngrx-smartish.module';
+export { NgRxSmartishPipesTestingModule } from './lib/pipes/ngrx-smartish-pipes-testing.module';
+export { NgRxSmartishPipesModule } from './lib/pipes/ngrx-smartish-pipes.module';
+export { SmartSelectPipe } from './lib/pipes/smart-select.pipe';
+export { MockSmartSelectPipe } from './lib/pipes/smart-select.pipe.mock';
+export { smartDispatch } from './lib/utils/smart-dispatch';
+export { SmartAbstract } from './lib/utils/smart-abstract';
+export { SMARTISH_STORE_TOKEN } from './lib/token';

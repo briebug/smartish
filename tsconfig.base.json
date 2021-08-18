@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@briebug/smartish-ngrx": ["libs/ngrx/src/index.ts"]
+      "@briebug/ngrx-smartish": ["libs/ngrx-smartish/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

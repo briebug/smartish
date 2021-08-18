@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { smartDispatch } from '@briebug/smartish-ngrx';
+import { smartDispatch } from '@briebug/ngrx-smartish';
 import { Store } from '@ngrx/store';
 import { saveProduct } from '../+state/product/+state/actions';
 import { Product } from '../+state/product/product';

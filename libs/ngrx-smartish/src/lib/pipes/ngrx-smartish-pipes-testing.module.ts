@@ -5,4 +5,4 @@ import { MockSmartSelectPipe } from './smart-select.pipe.mock';
   exports: [MockSmartSelectPipe],
   declarations: [MockSmartSelectPipe],
 })
-export class SmartishNgRxPipesTestingModule {}
+export class NgRxSmartishPipesTestingModule {}

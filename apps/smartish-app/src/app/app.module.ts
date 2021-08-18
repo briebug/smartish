@@ -3,9 +3,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  SmartishNgRxModule,
+  NgRxSmartishModule,
   SMARTISH_STORE_TOKEN,
-} from '@briebug/smartish-ngrx';
+} from '@briebug/ngrx-smartish';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { Store, StoreModule } from '@ngrx/store';
@@ -20,7 +20,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    SmartishNgRxModule,
+    NgRxSmartishModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
     StoreRouterConnectingModule.forRoot(),

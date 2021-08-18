@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { smartDispatch } from '@briebug/smartish-ngrx';
+import { smartDispatch } from '@briebug/ngrx-smartish';
 import { updateOrderPagination } from './+state/actions';
 import { Order } from './+state/order';
 import { selectAllOrders, selectOrderPaginator } from './+state/selectors';

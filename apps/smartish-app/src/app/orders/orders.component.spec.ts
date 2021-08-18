@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
+import { NgRxSmartishTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { Order } from './+state/order';
@@ -20,7 +20,7 @@ describe('OrdersComponent', () => {
         MaterialModule,
         BrowserAnimationsModule,
         SharedModule,
-        SmartishNgRxTestingModule.forRoot<OrdersState>({
+        NgRxSmartishTestingModule.forRoot<OrdersState>({
           initialState: {
             orders: [],
             isLoading: false,
