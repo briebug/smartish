@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SmartishNgRxTestingModule } from '@briebug/ngrx-smartish';
+import { NgRxSmartishTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import {
@@ -19,7 +19,7 @@ describe('CatalogComponent', () => {
       imports: [
         SharedModule,
         MaterialModule,
-        SmartishNgRxTestingModule.forRoot<ProductState>({
+        NgRxSmartishTestingModule.forRoot<ProductState>({
           initialState: productInitialState,
         }),
       ],

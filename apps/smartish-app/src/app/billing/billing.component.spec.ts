@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SmartishNgRxTestingModule } from '@briebug/ngrx-smartish';
+import { NgRxSmartishTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 
@@ -15,7 +15,7 @@ describe('BillingComponent', () => {
       imports: [
         SharedModule,
         MaterialModule,
-        SmartishNgRxTestingModule.forRoot({}),
+        NgRxSmartishTestingModule.forRoot({}),
       ],
     }).compileComponents();
   });

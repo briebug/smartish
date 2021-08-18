@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SmartishNgRxTestingModule } from '@briebug/ngrx-smartish';
+import { NgRxSmartishTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../../material/material.module';
 
 import { BillComponent } from './bill.component';
@@ -15,7 +15,7 @@ describe('BillComponent', () => {
       imports: [
         MaterialModule,
         BrowserAnimationsModule,
-        SmartishNgRxTestingModule.forRoot({}),
+        NgRxSmartishTestingModule.forRoot({}),
       ],
     }).compileComponents();
   });
