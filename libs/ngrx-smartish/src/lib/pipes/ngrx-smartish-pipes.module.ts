@@ -5,4 +5,4 @@ import { SmartSelectPipe } from './smart-select.pipe';
   exports: [SmartSelectPipe],
   declarations: [SmartSelectPipe],
 })
-export class SmartishNgRxPipesModule {}
+export class NgRxSmartishPipesModule {}

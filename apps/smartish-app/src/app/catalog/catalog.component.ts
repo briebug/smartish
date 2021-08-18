@@ -7,7 +7,7 @@ import {
 } from './+state/product/+state/selectors';
 import { updateProductPagination } from './+state/product/+state/actions';
 import { Product } from './+state/product/product';
-import { smartDispatch } from '@briebug/smartish-ngrx';
+import { smartDispatch } from '@briebug/ngrx-smartish';
 
 type CatalogColumnKeys = keyof Product;
 

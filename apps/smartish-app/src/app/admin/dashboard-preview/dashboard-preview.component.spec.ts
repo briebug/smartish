@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
+import { SmartishNgRxTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../../material/material.module';
 import { DashboardPreview } from './dashboard-preview';
 import { RouterTestingModule } from '@angular/router/testing';

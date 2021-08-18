@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SmartishNgRxTestingModule } from '@briebug/smartish-ngrx';
+import { SmartishNgRxTestingModule } from '@briebug/ngrx-smartish';
 import { MaterialModule } from '../../material/material.module';
 
 import { ShipmentComponent } from './shipment.component';

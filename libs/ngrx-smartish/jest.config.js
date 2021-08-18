@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'ngrx',
+  displayName: 'ngrx-smartish',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/libs/ngrx',
+  coverageDirectory: '../../coverage/libs/ngrx-smartish',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

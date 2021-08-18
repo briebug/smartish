@@ -8,24 +8,24 @@ import {
 import { InjectorLocator } from './injector-locator/injector-locator';
 import { INJECTOR_LOCATOR_TOKEN } from './injector-locator/injector-locator.token';
 import { provideInjectorLocator } from './injector-locator/provide-injector-locator';
-import { SmartishNgRxModule } from './ngrx.module';
-import { SmartishNgRxPipesTestingModule } from './pipes/ngrx-pipes-testing.module';
+import { NgRxSmartishModule } from './ngrx-smartish.module';
+import { NgRxSmartishPipesTestingModule } from './pipes/ngrx-smartish-pipes-testing.module';
 import { SMARTISH_STORE_TOKEN } from './token';
 
 @NgModule({
   imports: [],
-  exports: [SmartishNgRxPipesTestingModule, SmartishNgRxModule],
+  exports: [NgRxSmartishPipesTestingModule, NgRxSmartishModule],
 })
-export class SmartishNgRxTestingModule {
+export class NgRxSmartishTestingModule {
   constructor(
     @Inject(INJECTOR_LOCATOR_TOKEN) readonly injector: InjectorLocator
   ) {}
 
   static forRoot<T>(
     config?: MockStoreConfig<T>
-  ): ModuleWithProviders<SmartishNgRxTestingModule> {
+  ): ModuleWithProviders<NgRxSmartishTestingModule> {
     return {
-      ngModule: SmartishNgRxTestingModule,
+      ngModule: NgRxSmartishTestingModule,
       providers: [
         provideMockStore(config),
         provideInjectorLocator(),

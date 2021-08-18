@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { createAction } from '@ngrx/store';
 import { MockStore } from '@ngrx/store/testing';
-import { SmartishNgRxTestingModule } from '../ngrx-testing.module';
+import { NgRxSmartishTestingModule } from '../ngrx-smartish-testing.module';
 import { smartDispatch } from './smart-dispatch';
 
 describe('smartDispatch', () => {
@@ -10,7 +10,7 @@ describe('smartDispatch', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SmartishNgRxTestingModule.forRoot()],
+      imports: [NgRxSmartishTestingModule.forRoot()],
     }).compileComponents();
 
     store = TestBed.inject(MockStore);

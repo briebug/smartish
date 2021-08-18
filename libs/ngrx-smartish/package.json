@@ -1,6 +1,6 @@
 {
-  "name": "@briebug/smartish-ngrx",
-  "version": "0.0.1",
+  "name": "@briebug/ngrx-smartish",
+  "version": "0.0.1-beta.2",
   "peerDependencies": {
     "@angular/common": "^11.2.8",
     "@angular/core": "^11.2.8"

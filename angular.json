@@ -151,10 +151,10 @@
         }
       }
     },
-    "ngrx": {
+    "ngrx-smartish": {
       "projectType": "library",
-      "root": "libs/ngrx",
-      "sourceRoot": "libs/ngrx/src",
+      "root": "libs/ngrx-smartish",
+      "sourceRoot": "libs/ngrx-smartish/src",
       "prefix": "smartish",
       "architect": {
         "build": {
@@ -165,7 +165,7 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/ngrx/tsconfig.lib.prod.json"
+              "tsConfig": "libs/ngrx-smartish/tsconfig.lib.prod.json"
             }
           }
         },
@@ -180,9 +180,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ngrx"],
+          "outputs": ["coverage/libs/ngrx-smartish"],
           "options": {
-            "jestConfig": "libs/ngrx/jest.config.js",
+            "jestConfig": "libs/ngrx-smartish/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { createAction } from '@ngrx/store';
-import { SmartishNgRxTestingModule } from '../ngrx-testing.module';
+import { NgRxSmartishTestingModule } from '../ngrx-smartish-testing.module';
 import { SmartAbstract } from './smart-abstract';
 
 @Component({ template: `` })
@@ -15,7 +15,7 @@ describe('SmartAbstract', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SmartAbstractTestingComponent],
-      imports: [SmartishNgRxTestingModule.forRoot(initialState)],
+      imports: [NgRxSmartishTestingModule.forRoot(initialState)],
     });
 
     fixture = TestBed.createComponent(SmartAbstractTestingComponent);

@@ -1,16 +1,16 @@
-# Smartish
+# NgRx Smartish
 
-Smartish is a small utility library that makes creating "smartish" components in Angular a breeze. Smartish Components mixed with NgRx, provide a clean and declartive approach to building applications in Angular. 
+NgRx Smartish is a small utility library that makes creating "smartish" components in Angular a breeze. NgRx mixed with Smartish Components, provide a clean and declartive approach to building applications in Angular. 
 
 
 ## Getting Started
 
-You can install the package using `npm install @briebug/smartish-ngrx`
+You can install the package using `npm install @briebug/ngrx-smartish`
 
-Next you will need to import `SmartishNgRxModule` in `app.module` as well as provide store using the `SMARTISH_STORE_TOKEN`.
+Next you will need to import `NgRxSmartishModule` in `app.module` as well as provide store using the `SMARTISH_STORE_TOKEN`.
 
 ```
-import { SmartishNgRxModule, SMARTISH_STORE_TOKEN } from '@briebug/smartish-ngrx';
+import { NgRxSmartishModule, SMARTISH_STORE_TOKEN } from '@briebug/ngrx-smartish';
 imoprt { StoreModule, Store } from '@ngrx/store';
 
 @NgModule({
@@ -44,7 +44,7 @@ export class ErrorComponent {
 With SmartishNgRx you can dispatch actions directly in your Angular Component's template without the need to dispatch an `@Output() EventEmitter` or injecting the `store`. You simply can use either the `smartDispatch` method.
 
 ```
-import { smartDispatch } from '@briebug/smartish-ngrx';
+import { smartDispatch } from '@briebug/ngrx-smartish';
 import { addTaco } from '...my-actions';
 
 @Component({

@@ -21,7 +21,7 @@
       "tags": [],
       "implicitDependencies": ["smartish-app"]
     },
-    "ngrx": { "tags": [] },
+    "ngrx-smartish": { "tags": [] },
     "api": { "tags": [] }
   }
 }

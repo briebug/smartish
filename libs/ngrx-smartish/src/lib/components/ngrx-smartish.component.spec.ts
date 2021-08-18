@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SmartishNgRxComponent } from './ngrx.component';
-import { SmartishNgRxTestingModule } from '../ngrx-testing.module';
+import { NgRxSmartishComponent } from './ngrx-smartish.component';
+import { NgRxSmartishTestingModule } from '../ngrx-smartish-testing.module';
 import { Component } from '@angular/core';
 import { createAction } from '@ngrx/store';
 
 @Component({ template: '' })
-class SmartishTestComponent extends SmartishNgRxComponent {}
+class SmartishTestComponent extends NgRxSmartishComponent {}
 describe('SmartishNgRxComponent', () => {
   let fixture: ComponentFixture<SmartishTestComponent>;
   let component: SmartishTestComponent;
@@ -13,7 +13,7 @@ describe('SmartishNgRxComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SmartishTestComponent],
-      imports: [SmartishNgRxTestingModule.forRoot()],
+      imports: [NgRxSmartishTestingModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SmartishTestComponent);
